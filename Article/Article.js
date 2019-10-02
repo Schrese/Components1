@@ -92,6 +92,20 @@ const data = [
     firstParagraph: 'We\'re no strangers to love. You know the rules and so do I. A full commitment\'s what I\'m thinking of You wouldn\'t get this from any other guy I just wanna tell you how I\'m feeling Gotta make you understand Never gonna give you up Never gonna let you down Never gonna run around and desert you Never gonna make you cry Never gonna say goodbye Never gonna tell a lie and hurt you We\'ve known each other for so long Your heart\'s been aching but you\'re too shy to say it Inside we both know what\'s been going on We know the game and we\'re gonna play it And if you ask me how I\'m feeling Don\'t tell me you\'re too blind to see',
     secondParagraph: 'Never gonna give you up Never gonna let you down Never gonna run around and desert you Never gonna make you cry Never gonna say goodbye Never gonna tell a lie and hurt you Never gonna give you up Never gonna let you down Never gonna run around and desert you Never gonna make you cry Never gonna say goodbye Never gonna tell a lie and hurt you Never gonna give, never gonna give (Give you up) (Ooh) Never gonna give, never gonna give (Give you up) We\'ve known each other for so long Your heart\'s been aching but you\'re too shy to say it Inside we both know what\'s been going on We know the game and we\'re gonna play it I just wanna tell you how I\'m feeling Gotta make you understand' ,
     thirdParagraph: 'Never gonna give you up Never gonna let you down Never gonna run around and desert you Never gonna make you cry Never gonna say goodbye Never gonna tell a lie and hurt you Never gonna give you up Never gonna let you down Never gonna run around and desert you Never gonna make you cry Never gonna say goodbye Never gonna tell a lie and hurt you Never gonna give you up Never gonna let you down Never gonna run around and desert you Never gonna make you cry' 
+  },
+  {
+    title: 'Enterprise NCC-1701D',
+    date: 'Stardate 43989.1',
+    firstParagraph: 'Space..... The final frontier...........',
+    secondParagraph: 'These are the voyages of the Starship Enterprise. Its continuing mission: ' ,
+    thirdParagraph: 'To explore strange new worlds..... \br To seek out new life; new civilisations... \br To boldly go where no one has gone before! ............................ YOU WILL BE ASSIMILATED! RESISTANCE IS FUTILE! ' 
+  },
+  {
+    title: 'I Am Groot',
+    date: 'I Am Groot',
+    firstParagraph: 'I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot ',
+    secondParagraph: 'I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot ' ,
+    thirdParagraph: 'I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot ' 
   }
 ];
 
