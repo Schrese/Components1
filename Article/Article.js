@@ -94,6 +94,7 @@ data.forEach(data => {
   article.appendChild(createArticles(data.title, data.date, data.firstParagraph, data.secondParagraph, data.thirdParagraph))
 })
 
+console.log(article);
 //creating the Elements
 
 function createArticles(title, date, firstParagraph, secondParagraph, thirdParagraph) {
@@ -107,13 +108,14 @@ function createArticles(title, date, firstParagraph, secondParagraph, thirdParag
   //setting the class names 
   articleDate.classList.add('date');
   articleButton.classList.add('expandButton');
+  article.classList.add('article-open');
 
   //setting up the structure 
   article.appendChild(articleTitle);
-  article.appendChild(articleDate);
-  article.appendChild(articleFirstP);
-  article.appendChild(articleSecondP);
-  article.appendChild(articleThirdP);
+  articleTitle.appendChild(articleDate);
+  articleDate.appendChild(articleFirstP);
+  articleFirstP.appendChild(articleSecondP);
+  articleSecondP.appendChild(articleThirdP);
   article.appendChild(articleButton);
 
   //setting the text content 
@@ -123,6 +125,12 @@ function createArticles(title, date, firstParagraph, secondParagraph, thirdParag
   articleSecondP.textContent = secondParagraph;
   articleThirdP.textContent = thirdParagraph;
   articleButton.textContent = 'button';
+
+
+  articleButton.addEventListener('click', () => { 
+    console.log('button clicked');
+    articleButton.classList.toggle('article-open');
+  })
 
   return articleTitle;
 
