@@ -85,8 +85,80 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'Don\'t Click On Me!',
+    date: '27 July 1987 (BUT SERIOUSLY, DON\'T CLICK ON ME!)',
+    firstParagraph: 'We\'re no strangers to love. You know the rules and so do I. A full commitment\'s what I\'m thinking of You wouldn\'t get this from any other guy I just wanna tell you how I\'m feeling Gotta make you understand Never gonna give you up Never gonna let you down Never gonna run around and desert you Never gonna make you cry Never gonna say goodbye Never gonna tell a lie and hurt you We\'ve known each other for so long Your heart\'s been aching but you\'re too shy to say it Inside we both know what\'s been going on We know the game and we\'re gonna play it And if you ask me how I\'m feeling Don\'t tell me you\'re too blind to see',
+    secondParagraph: 'Never gonna give you up Never gonna let you down Never gonna run around and desert you Never gonna make you cry Never gonna say goodbye Never gonna tell a lie and hurt you Never gonna give you up Never gonna let you down Never gonna run around and desert you Never gonna make you cry Never gonna say goodbye Never gonna tell a lie and hurt you Never gonna give, never gonna give (Give you up) (Ooh) Never gonna give, never gonna give (Give you up) We\'ve known each other for so long Your heart\'s been aching but you\'re too shy to say it Inside we both know what\'s been going on We know the game and we\'re gonna play it I just wanna tell you how I\'m feeling Gotta make you understand' ,
+    thirdParagraph: 'Never gonna give you up Never gonna let you down Never gonna run around and desert you Never gonna make you cry Never gonna say goodbye Never gonna tell a lie and hurt you Never gonna give you up Never gonna let you down Never gonna run around and desert you Never gonna make you cry Never gonna say goodbye Never gonna tell a lie and hurt you Never gonna give you up Never gonna let you down Never gonna run around and desert you Never gonna make you cry' 
+  },
+  {
+    title: 'Enterprise NCC-1701D',
+    date: 'Stardate 43989.1',
+    firstParagraph: 'Space..... The final frontier...........',
+    secondParagraph: 'These are the voyages of the Starship Enterprise. Its continuing mission: ' ,
+    thirdParagraph: 'To explore strange new worlds..... \br To seek out new life; new civilisations... \br To boldly go where no one has gone before! ............................ YOU WILL BE ASSIMILATED! RESISTANCE IS FUTILE! ' 
+  },
+  {
+    title: 'I Am Groot',
+    date: 'I Am Groot',
+    firstParagraph: 'I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot ',
+    secondParagraph: 'I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot ' ,
+    thirdParagraph: 'I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot I Am Groot ' 
   }
 ];
+
+const articles = document.querySelector('.articles');
+
+data.forEach(data => {
+  articles.appendChild(createArticles(data.title, data.date, data.firstParagraph, data.secondParagraph, data.thirdParagraph))
+})
+
+// console.log(article);
+//creating the Elements
+
+function createArticles(title, date, firstParagraph, secondParagraph, thirdParagraph) {
+  const article = document.createElement('div');
+  const articleTitle = document.createElement('h2');
+  const articleDate = document.createElement('p');
+  const articleFirstP = document.createElement('p');
+  const articleSecondP = document.createElement('p');
+  const articleThirdP = document.createElement('p');
+  const articleButton = document.createElement('button');
+
+  //setting the class names 
+  articleDate.classList.add('date');
+  articleButton.classList.add('expandButton');
+  // article.classList.add('article-open');
+  article.classList.add('article');
+
+  //setting up the structure 
+  article.appendChild(articleTitle);
+  article.appendChild(articleDate);
+  article.appendChild(articleFirstP);
+  article.appendChild(articleSecondP);
+  article.appendChild(articleThirdP);
+  article.appendChild(articleButton);
+
+  //setting the text content 
+  articleTitle.textContent = title;
+  articleDate.textContent = date;
+  articleFirstP.textContent = firstParagraph;
+  articleSecondP.textContent = secondParagraph;
+  articleThirdP.textContent = thirdParagraph;
+  articleButton.textContent = 'button';
+
+
+  articleButton.addEventListener('click', () => { 
+    console.log('button clicked');
+    article.classList.toggle('article-open');
+    TweenMax.to('.article', 1, {width: '80%', backgroundColor: 'blue', borderRadius: 50})
+  })
+
+  return article;
+
+  }
 
 /* Step 1: Create a function that creates a component. You will want your component to look like the template below: 
   
