@@ -88,6 +88,46 @@ const data = [
   }
 ];
 
+const article = document.querySelector('.articles');
+
+data.forEach(data => {
+  article.appendChild(createArticles(data.title, data.date, data.firstParagraph, data.secondParagraph, data.thirdParagraph))
+})
+
+//creating the Elements
+
+function createArticles(title, date, firstParagraph, secondParagraph, thirdParagraph) {
+  const articleTitle = document.createElement('h2');
+  const articleDate = document.createElement('p');
+  const articleFirstP = document.createElement('p');
+  const articleSecondP = document.createElement('p');
+  const articleThirdP = document.createElement('p');
+  const articleButton = document.createElement('button');
+
+  //setting the class names 
+  articleDate.classList.add('date');
+  articleButton.classList.add('expandButton');
+
+  //setting up the structure 
+  article.appendChild(articleTitle);
+  article.appendChild(articleDate);
+  article.appendChild(articleFirstP);
+  article.appendChild(articleSecondP);
+  article.appendChild(articleThirdP);
+  article.appendChild(articleButton);
+
+  //setting the text content 
+  articleTitle.textContent = title;
+  articleDate.textContent = date;
+  articleFirstP.textContent = firstParagraph;
+  articleSecondP.textContent = secondParagraph;
+  articleThirdP.textContent = thirdParagraph;
+  articleButton.textContent = 'button';
+
+  return articleTitle;
+
+  }
+
 /* Step 1: Create a function that creates a component. You will want your component to look like the template below: 
   
   <div class="article">
