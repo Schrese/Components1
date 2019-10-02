@@ -153,6 +153,7 @@ function createArticles(title, date, firstParagraph, secondParagraph, thirdParag
   articleButton.addEventListener('click', () => { 
     console.log('button clicked');
     article.classList.toggle('article-open');
+    TweenMax.to('.article', 1, {width: '80%', backgroundColor: 'blue', borderRadius: 50})
   })
 
   return article;
