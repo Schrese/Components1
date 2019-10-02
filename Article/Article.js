@@ -85,19 +85,27 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'Don\'t Click On Me!',
+    date: '27 July 1987 (BUT SERIOUSLY, DON\'T CLICK ON ME!)',
+    firstParagraph: 'We\'re no strangers to love. You know the rules and so do I. A full commitment\'s what I\'m thinking of You wouldn\'t get this from any other guy I just wanna tell you how I\'m feeling Gotta make you understand Never gonna give you up Never gonna let you down Never gonna run around and desert you Never gonna make you cry Never gonna say goodbye Never gonna tell a lie and hurt you We\'ve known each other for so long Your heart\'s been aching but you\'re too shy to say it Inside we both know what\'s been going on We know the game and we\'re gonna play it And if you ask me how I\'m feeling Don\'t tell me you\'re too blind to see',
+    secondParagraph: 'Never gonna give you up Never gonna let you down Never gonna run around and desert you Never gonna make you cry Never gonna say goodbye Never gonna tell a lie and hurt you Never gonna give you up Never gonna let you down Never gonna run around and desert you Never gonna make you cry Never gonna say goodbye Never gonna tell a lie and hurt you Never gonna give, never gonna give (Give you up) (Ooh) Never gonna give, never gonna give (Give you up) We\'ve known each other for so long Your heart\'s been aching but you\'re too shy to say it Inside we both know what\'s been going on We know the game and we\'re gonna play it I just wanna tell you how I\'m feeling Gotta make you understand' ,
+    thirdParagraph: 'Never gonna give you up Never gonna let you down Never gonna run around and desert you Never gonna make you cry Never gonna say goodbye Never gonna tell a lie and hurt you Never gonna give you up Never gonna let you down Never gonna run around and desert you Never gonna make you cry Never gonna say goodbye Never gonna tell a lie and hurt you Never gonna give you up Never gonna let you down Never gonna run around and desert you Never gonna make you cry' 
   }
 ];
 
-const article = document.querySelector('.articles');
+const articles = document.querySelector('.articles');
 
 data.forEach(data => {
-  article.appendChild(createArticles(data.title, data.date, data.firstParagraph, data.secondParagraph, data.thirdParagraph))
+  articles.appendChild(createArticles(data.title, data.date, data.firstParagraph, data.secondParagraph, data.thirdParagraph))
 })
 
-console.log(article);
+// console.log(article);
 //creating the Elements
 
 function createArticles(title, date, firstParagraph, secondParagraph, thirdParagraph) {
+  const article = document.createElement('div');
   const articleTitle = document.createElement('h2');
   const articleDate = document.createElement('p');
   const articleFirstP = document.createElement('p');
@@ -108,14 +116,15 @@ function createArticles(title, date, firstParagraph, secondParagraph, thirdParag
   //setting the class names 
   articleDate.classList.add('date');
   articleButton.classList.add('expandButton');
-  article.classList.add('article-open');
+  // article.classList.add('article-open');
+  article.classList.add('article');
 
   //setting up the structure 
   article.appendChild(articleTitle);
-  articleTitle.appendChild(articleDate);
-  articleDate.appendChild(articleFirstP);
-  articleFirstP.appendChild(articleSecondP);
-  articleSecondP.appendChild(articleThirdP);
+  article.appendChild(articleDate);
+  article.appendChild(articleFirstP);
+  article.appendChild(articleSecondP);
+  article.appendChild(articleThirdP);
   article.appendChild(articleButton);
 
   //setting the text content 
@@ -129,10 +138,10 @@ function createArticles(title, date, firstParagraph, secondParagraph, thirdParag
 
   articleButton.addEventListener('click', () => { 
     console.log('button clicked');
-    articleButton.classList.toggle('article-open');
+    article.classList.toggle('article-open');
   })
 
-  return articleTitle;
+  return article;
 
   }
 
